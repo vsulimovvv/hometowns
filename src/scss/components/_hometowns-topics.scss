@@ -34,17 +34,28 @@
     text-transform: uppercase;
     color: #0f0f0f;
     margin-bottom: 25px;
-    padding-left: 45px;
     position: relative;
+    display: flex;
+    align-items: center;
 
-    &::after {
-      @include elDef();
+    span {
       width: 30px;
       height: 30px;
-      @include backgroundImage(url("../img/topics-icon.jpg"), contain);
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-blue-light);
+      margin-right: 15px;
+
+      svg {
+        width: 14px;
+        height: 14px;
+
+        path {
+          fill: var(--color-white);
+        }
+      }
     }
   }
 

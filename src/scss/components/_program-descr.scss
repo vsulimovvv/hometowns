@@ -116,7 +116,8 @@
     @include adaptive-value("height", 172, 98, 1);
 
     img {
-      @include img(contain);
+      @include img(cover);
+      border-radius: 50%;
     }
 
     @include breakpointsMaxW($bp-768) {
