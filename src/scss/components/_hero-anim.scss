@@ -126,10 +126,8 @@
     }
   }
 
-  &.hero--musical {
+  &.hero--circle-bottom {
     &::after {
-      width: 212px;
-      height: 212px;
       bottom: 0;
     }
   }
