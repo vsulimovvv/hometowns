@@ -1,0 +1,21 @@
+.form-add {
+  display: grid;
+  @include adaptive-value("gap", 24, 16, 1);
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: 56px;
+    padding: 16px 24px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+  }
+
+  &__btn {
+    justify-self: start;
+    
+    @include breakpointsMaxW($bp-768) {
+      justify-self: initial;
+    }
+  }
+}

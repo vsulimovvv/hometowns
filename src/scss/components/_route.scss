@@ -1,0 +1,33 @@
+.route {
+  @include adaptive-value("padding-top", 60, 40, 1);
+  @include adaptive-value("padding-bottom", 90, 50, 1);
+
+  &__title {
+    @include fz48();
+    @include adaptive-value("margin-bottom", 60, 40, 1);
+  }
+
+  &__img {
+    width: 100%;
+    height: 650px;
+    @include adaptive-value("height", 650, 422, 1);
+    @include background(cover);
+    border-radius: 15px;
+
+    @include breakpointsMaxW($bp-991) {
+      border-radius: 0;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      background-position-x: 45%;
+    }
+  }
+
+  &__content {
+    .container {
+      @include breakpointsMaxW($bp-991) {
+        padding: 0;
+      }
+    }
+  }
+}

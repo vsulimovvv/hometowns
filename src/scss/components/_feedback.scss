@@ -1,0 +1,66 @@
+.feedback {
+  &__top {
+    @include adaptive-value("margin-bottom", 40, 24, 1);
+  }
+
+  &__form {
+    @include adaptive-value("margin-bottom", 48, 24, 1);
+  }
+
+  .feedback-top {
+    &__list {
+      display: flex;
+      align-items: center;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        @include adaptive-value("margin-right", 32, 16, 1);
+      }
+    }
+
+    &__btn {
+      display: block;
+      color: var(--color-text);
+      font-weight: 600;
+      position: relative;
+      transition: 200ms ease;
+
+      @include adaptive-value("font-size", 18, 13, 1);
+      @include adaptive-value("padding-bottom", 24, 8, 1);
+
+      &::after {
+        @include elDef();
+        background-color: var(--color-blue-light);
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: 300ms ease;
+        @include adaptive-value("height", 4, 3, 1);
+      }
+
+      &:hover {
+        color: var(--color-orange);
+      }
+
+      &.active {
+        color: var(--color-black);
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  .feedback__content {
+    display: none;
+
+    &.active {
+      display: block;
+      animation: opacity-visibility 700ms ease forwards;
+    }
+  }
+}

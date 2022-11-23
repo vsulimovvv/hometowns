@@ -1,0 +1,42 @@
+.ticker {
+  @include adaptive-value("padding-top", 70, 40, 1);
+  @include adaptive-value("padding-bottom", 70, 40, 1);
+
+  &__slider {
+  }
+
+  &__slide {
+    box-sizing: border-box;
+    width: auto;
+  }
+
+  &__link {
+    line-height: 1;
+    font-weight: 700;
+    transition: 200ms ease;
+    @include adaptive-value("font-size", 19, 16, 1);
+
+    &.orange {
+      color: var(--color-orange);
+    }
+
+    &.green {
+      color: var(--color-green);
+    }
+
+    &.blue {
+      color: var(--color-blue-light);
+    }
+
+    &.dark-blue {
+      color: var(--color-blue);
+    }
+
+    &.purple {
+      color: var(--color-blue-dark);
+    }
+    &:hover {
+      color: var(--color-black);
+    }
+  }
+}

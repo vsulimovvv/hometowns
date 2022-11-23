@@ -1,0 +1,145 @@
+.create-future {
+  background-color: #f2f5f7;
+  @include adaptive-value("padding-top", 70, 40, 1);
+  @include adaptive-value("padding-bottom", 70, 40, 1);
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    align-items: center;
+    gap: 50px;
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+
+  &__title {
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: $DINProCond;
+    @include adaptive-value("font-size", 48, 24, 1);
+    margin-bottom: 20px;
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+
+      &--mobile {
+        display: block;
+        margin-bottom: calc(16px + (30 - 16) * ((100vw - 320px) / (991 - 320)));
+      }
+    }
+  }
+
+  &__text {
+    line-height: 1.5;
+    font-weight: 400;
+    color: #0f0f0f;
+    @include adaptive-value("font-size", 16, 14, 1);
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+
+      &--mobile {
+        display: block;
+      }
+    }
+
+    p {
+      &:not(:last-child) {
+        @include adaptive-value("margin-bottom", 25, 15, 1);
+      }
+    }
+
+    @include adaptive-value("margin-bottom", 45, 30, 1);
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__preview {
+    max-width: 680px;
+    width: 100%;
+    height: 580px;
+    @include adaptive-value("height", 580, 250, 1);
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+
+      &--mobile {
+        display: block;
+        margin-bottom: calc(30px + (50 - 30) * ((100vw - 320px) / (991 - 320)));
+      }
+    }
+
+    img {
+      @include img(contain);
+    }
+  }
+
+  &__btn {
+    font-weight: 600;
+    padding: 22px 40px 22px 40px;
+    position: relative;
+    background-color: transparent;
+    border: 2px solid #ccebff;
+    border-radius: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 200ms ease;
+    width: 290px;
+    cursor: pointer;
+
+    @include breakpointsMaxW($bp-576) {
+      justify-content: space-between;
+      padding: 16px 32px;
+      width: 100%;
+    }
+
+    span {
+      margin-right: 16px;
+    }
+
+    svg {
+      transition: 200ms ease;
+    }
+
+    &:hover {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+
+      svg {
+        path {
+          fill: #fff;
+          stroke: #fff;
+        }
+      }
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      width: 100%;
+      font-size: 14px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+
+      &--mobile {
+        display: flex;
+      }
+    }
+  }
+
+  &__mobile {
+    display: none;
+
+    @include breakpointsMaxW($bp-991) {
+      display: block;
+    }
+  }
+}

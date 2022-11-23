@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.woff2") format("woff2"),
+    url("../fonts/Inter-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Bold.woff2") format("woff2"),
+    url("../fonts/Inter-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Medium.woff2") format("woff2"),
+    url("../fonts/Inter-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DIN Pro Cond";
+  src: url("../fonts/DINPro-CondensedBold.woff2") format("woff2"),
+    url("../fonts/DINPro-CondensedBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+// * ====
+// @font-face {
+//   font-family: "D-DIN Condensed";
+//   src: url("../fonts/D-DINCondensed-Bold.woff2") format("woff2"),
+//     url("../fonts/D-DINCondensed-Bold.woff") format("woff");
+//   font-weight: bold;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+@font-face {
+  font-family: "GPN_DINWebCondensedBold";
+  src: url("../fonts/GPN_DIN_Condensed-Bold.eot");
+  src: url("../fonts/GPN_DIN_Condensed-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/GPN_DIN_Condensed-Bold.woff2")
+      format("woff2"),
+    url("../fonts/GPN_DIN_Condensed-Bold.woff")
+      format("woff"),
+    url("../fonts/GPN_DIN_Condensed-Bold.ttf")
+      format("truetype"),
+    url("../fonts/GPN_DIN_Condensed-Bold.svg#GPN_DINWebCondensed-Bold")
+      format("svg");
+  font-weight: bold;
+  font-style: normal;
+}

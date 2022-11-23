@@ -1,0 +1,27 @@
+.video-card {
+  @include adaptive-value("margin-bottom", 40, 24, 1);
+
+  &__img {
+    position: relative;
+    height: 400px;
+    @include adaptive-value("margin-bottom", 24, 16, 1);
+
+    img {
+      @include img(cover);
+      border-radius: 8px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      height: calc(180px + (400 - 180) * ((100vw - 320px) / (991 - 320)));
+    }
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    font-weight: 400;
+  }
+
+  &__text {
+    color: var(--color-text);
+  }
+}

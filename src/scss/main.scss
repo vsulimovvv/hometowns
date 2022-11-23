@@ -1,0 +1,78 @@
+// базовые подключения
+@import "reset";
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "global";
+
+// Components
+@import "./components/header";
+@import "./components/footer";
+@import "./components/menu-mobile";
+@import "./components/menu";
+@import "./components/swiper-settings";
+@import "./components/accordion";
+@import "./components/socials";
+@import "./components/pagination";
+@import "./components/popups";
+@import "./components/actions";
+@import "./components/hero";
+@import "./components/future";
+@import "./components/projects";
+@import "./components/materials";
+@import "./components/subscribe";
+@import "./components/posts";
+@import "./components/news";
+@import "./components/news-details";
+@import "./components/card-descr";
+@import "./components/video-card";
+@import "./components/quote";
+@import "./components/form-add";
+@import "./components/feedback";
+@import "./components/comments";
+@import "./components/tags";
+@import "./components/animation";
+@import "./components/checkbox";
+@import "./components/badge";
+@import "./components/filters-news";
+@import "./components/posts-card";
+// *===== Grant
+@import "./components/hero-grant";
+@import "./components/create-future";
+@import "./components/stages-grant";
+@import "./components/how-participate";
+@import "./components/selection-app";
+@import "./components/ticker";
+@import "./components/faqs";
+@import "./components/projects-grant";
+@import "./components/questions";
+@import "./components/regulations";
+// *===== Projects
+@import "./components/projects-page";
+
+// *===== press-center
+@import "./components/presscenter";
+@import "./components/presskit";
+@import "./components/company-information";
+@import "./components/news-details-presscenter";
+@import "./components/news-contacts";
+@import "./components/program-promo";
+@import "./components/program-numbers";
+@import "./components/program-activities";
+@import "./components/grants";
+@import "./components/program-descr";
+@import "./components/program-map";
+// @import "./components/hero-storm";
+@import "./components/adv-storm";
+@import "./components/sports-grid";
+@import "./components/media";
+
+// musical
+@import "./components/musical-form";
+@import "./components/hero-anim";
+@import "./components/musical-inspire";
+@import "./components/section-descr";
+@import "./components/section-cols";
+@import "./components/route";
+@import "./components/hometowns-topics";
+@import "./components/museums-course";

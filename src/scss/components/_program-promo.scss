@@ -1,0 +1,86 @@
+.program-promo {
+  color: #0f0f0f;
+  position: relative;
+  @include adaptive-value("padding-top", 100, 50, 1);
+  @include adaptive-value("padding-bottom", 80, 40, 1);
+  overflow-x: hidden;
+
+  &__title {
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: $DINProCond;
+    @include adaptive-value("font-size", 64, 32, 1);
+    @include adaptive-value("margin-bottom", 15, 10, 1);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 0.52fr;
+    gap: 40px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 30px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  &__top {
+    font-size: 19px;
+    line-height: 1.3;
+    position: relative;
+    @include adaptive-value("font-size", 19, 14, 1);
+    @include adaptive-value("margin-bottom", 35, 25, 1);
+
+    &::after {
+      @include elDef();
+      width: 205px;
+      height: 205px;
+      top: -79px;
+      right: -133px;
+      @include backgroundImage(url("../img/circle.png"), contain);
+
+      @include breakpointsMaxW($bp-991) {
+        display: none;
+      }
+    }
+  }
+
+  &__col {
+    line-height: 1.5;
+
+    &:nth-child(1) {
+      line-height: 1.35;
+      font-weight: 500;
+      @include adaptive-value("font-size", 28, 18, 1);
+    }
+
+    &:nth-child(2) {
+      .program-promo__text {
+        max-width: 405px;
+
+        @include breakpointsMaxW($bp-991) {
+          max-width: 100%;
+        }
+      }
+
+      @include breakpointsMaxW($bp-991) {
+        .program-promo__img {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 15px;
+    @include adaptive-value("margin-bottom", 65, 35, 1);
+    @include adaptive-value("height", 480, 165, 1);
+  }
+}

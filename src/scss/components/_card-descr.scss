@@ -1,0 +1,38 @@
+.card-descr {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  @include adaptive-value("padding", 48, 16, 1);
+  @include adaptive-value("margin-bottom", 40, 24, 1);
+
+  &__inner {
+    display: grid;
+    grid-template-columns: minmax(auto, 552px) minmax(auto, 312px);
+    align-items: center;
+    gap: 24px;
+
+    @include breakpointsMaxW($bp-768) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__img {
+    border-radius: 8px;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+
+    @include breakpointsMaxW($bp-768) {
+      max-width: 320px;
+    }
+  }
+
+  &__title {
+    @include adaptive-value("font-size", 18, 16, 1);
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    @include adaptive-value("font-size", 16, 13, 1);
+    margin-bottom: 16px;
+  }
+}

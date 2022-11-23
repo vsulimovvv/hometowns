@@ -1,0 +1,63 @@
+.tags {
+  width: 100%;
+  height: 36px;
+
+  @include breakpointsMaxW($bp-768) {
+    width: calc(280px + (700 - 280) * ((100vw - 320px) / (768 - 320)));
+  }
+
+  .swiper {
+    width: auto;
+  }
+
+  .swiper-wrapper {
+    width: 100% !important;
+    min-width: 0;
+  }
+
+  .swiper-slide {
+    width: auto;
+    box-sizing: border-box;
+    height: 36px;
+  }
+
+  &__tag {
+    height: 36px;
+    padding: 8px 16px;
+    border: 2px solid rgba(0, 154, 255, 0.2);
+    border-radius: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 200ms ease;
+    display: flex;
+    align-items: center;
+    @include adaptive-value("font-size", 13, 11, 1);
+
+    &:hover {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+    }
+  }
+}
+
+.tag {
+  height: 36px;
+  padding: 8px 16px;
+  border: 2px solid rgba(0, 154, 255, 0.2);
+  border-radius: 24px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: 200ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  @include adaptive-value("font-size", 13, 11, 1);
+  text-align: center;
+
+  &:hover {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+  }
+}

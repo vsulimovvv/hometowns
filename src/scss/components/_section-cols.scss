@@ -1,0 +1,43 @@
+.section-cols {
+  background-color: #f2f5f7;
+  @include adaptive-value("padding-top", 90, 50, 1);
+  @include adaptive-value("padding-bottom", 90, 50, 1);
+
+  &__title {
+    @include fz48();
+    @include adaptive-value("margin-bottom", 80, 50, 1);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 50px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      gap: 40px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    height: 100%;
+  }
+
+  .events-card {
+    &__top {
+      @include adaptive-value("height", 350, 250, 1);
+    }
+  }
+}

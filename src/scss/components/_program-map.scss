@@ -1,0 +1,674 @@
+.program-map {
+  &__title {
+    padding-left: 15px;
+    margin-bottom: 10px;
+    @include fz48();
+
+    @include breakpointsMaxW($bp-991) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  &__map {
+    position: relative;
+
+    @include breakpointsMaxW($bp-991) {
+      height: 580px;
+    }
+
+    .simplebar-track {
+      opacity: 0;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  &__img {
+    width: 100%;
+    height: 750px;
+    position: relative;
+    width: 1350px;
+
+    @include breakpointsMaxW($bp-991) {
+      height: 580px;
+      width: 970px;
+      margin-left: -50px;
+    }
+
+    img {
+      @include img(contain);
+
+      @include breakpointsMaxW($bp-991) {
+        @include img(cover);
+      }
+    }
+
+    .circle {
+      position: absolute;
+      top: 10%;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      height: 40px;
+
+      @include breakpointsMaxW($bp-991) {
+        height: 35px;
+      }
+
+      &__city {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1;
+
+        @include breakpointsMaxW($bp-991) {
+          font-size: 11px;
+        }
+      }
+
+      &.active,
+      &:hover {
+        .circle__circle {
+          background-color: #ea6425;
+
+          &::after {
+            background-color: #ea6425;
+            opacity: 0.4;
+          }
+
+          &::before {
+            background-color: #ea6425;
+            opacity: 0.2;
+          }
+        }
+      }
+
+      &__circle {
+        margin-bottom: 10px;
+        width: 9px;
+        height: 9px;
+        background-color: #3c85f1;
+        border-radius: 50%;
+        transition: 200ms ease;
+        position: relative;
+        margin-bottom: 10px;
+        flex-shrink: 0;
+
+        &::after,
+        &::before {
+          @include elDef();
+          border-radius: 50%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: 200ms ease;
+          width: 100%;
+          height: 100%;
+        }
+
+        &::after {
+          animation: pulse 2000ms 1000ms ease-out infinite;
+          background-color: #3c85f1;
+          opacity: 0.4;
+        }
+
+        &::before {
+          background-color: rgba(#3c85f1, 0.2);
+          background-color: #3c85f1;
+          opacity: 0.2;
+          animation: pulse 2000ms ease-out infinite;
+        }
+      }
+
+      &.petersburg {
+        top: 21%;
+        left: 17%;
+
+        @include breakpointsMaxW($bp-991) {
+          left: 12%;
+        }
+      }
+
+      &.orenburg {
+        top: 56%;
+        left: 19%;
+
+        @include breakpointsMaxW($bp-991) {
+          left: 15%;
+        }
+      }
+
+      &.tyumen {
+        top: 55%;
+        left: 33%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 53%;
+        }
+      }
+
+      &.omsk {
+        top: 65%;
+        left: 35%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 63%;
+          left: 33%;
+        }
+      }
+
+      &.cape-stone {
+        top: 32%;
+        left: 40%;
+
+        @include breakpointsMaxW($bp-991) {
+          left: 36%;
+        }
+      }
+
+      &.salekhard {
+        top: 40%;
+        left: 37%;
+
+        @include breakpointsMaxW($bp-991) {
+          left: 33%;
+        }
+      }
+
+      &.tazovsky {
+        top: 39%;
+        left: 45%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 36%;
+          left: 46%;
+        }
+      }
+
+      &.muravlenko {
+        top: 49%;
+        left: 42%;
+      }
+
+      &.khanty-mansiysk {
+        top: 56%;
+        left: 42%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 58%;
+        }
+      }
+
+      &.tomsk {
+        top: 67%;
+        left: 44%;
+
+        @include breakpointsMaxW($bp-991) {
+          left: 45%;
+        }
+      }
+
+      // Серые
+      &--gray {
+        .circle__city {
+          margin-top: auto;
+          font-size: 10px;
+          line-height: 1;
+          font-weight: 400;
+          color: #b6bbbf;
+
+          @include breakpointsMaxW($bp-768) {
+            font-size: 9px;
+          }
+        }
+      }
+
+      &.murmansk {
+        top: 8%;
+        left: 30%;
+
+        @include breakpointsMaxW($bp-991) {
+          left: 26%;
+        }
+      }
+
+      &.pskov {
+        top: 18%;
+        left: 14%;
+
+        @include breakpointsMaxW($bp-991) {
+          left: 12%;
+        }
+      }
+
+      &.velikiy-novgorod {
+        top: 24%;
+        left: 19%;
+      }
+
+      &.khurba {
+        top: 84%;
+        left: 88%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 83%;
+          left: 89%;
+        }
+      }
+
+      &.seryshevo {
+        top: 82%;
+        left: 79%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 79%;
+        }
+      }
+
+      &.chita {
+        top: 84%;
+        left: 69%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 82%;
+        }
+      }
+
+      &.ulan-ude {
+        top: 87%;
+        left: 63%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 85%;
+        }
+      }
+
+      &.barnaul {
+        top: 79%;
+        left: 43%;
+      }
+
+      &.novoaltaysk {
+        top: 77%;
+        left: 44%;
+      }
+
+      &.kemerovo {
+        top: 74%;
+        left: 44%;
+      }
+
+      &.krasnoyarsk {
+        top: 69%;
+        left: 48%;
+      }
+
+      &.berdsk {
+        top: 69%;
+        left: 41%;
+      }
+
+      &.novosibirsk {
+        top: 65%;
+        left: 38%;
+
+        @include breakpointsMaxW($bp-991) {
+          left: 37%;
+        }
+      }
+
+      &.nizhnevartovsk {
+        top: 54%;
+        left: 50%;
+      }
+
+      &.megion {
+        top: 51%;
+        left: 48%;
+      }
+
+      &.noyabrsk {
+        top: 46%;
+        left: 47%;
+
+        @include breakpointsMaxW($bp-991) {
+          left: 48%;
+        }
+      }
+
+      &.hanymey {
+        top: 44%;
+        left: 48%;
+      }
+
+      &.tarko-sale {
+        top: 42%;
+        left: 47%;
+
+        @include breakpointsMaxW($bp-991) {
+          left: 49%;
+        }
+      }
+
+      &.urengoy {
+        top: 40%;
+        left: 48%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 39%;
+        }
+      }
+
+      &.pravokhetty {
+        top: 42%;
+        left: 40%;
+      }
+
+      &.nadym {
+        top: 40%;
+        left: 42%;
+      }
+
+      &.novyy-port {
+        top: 36%;
+        left: 41%;
+
+        @include breakpointsMaxW($bp-991) {
+          left: 39%;
+        }
+      }
+
+      &.nizhniy-tagil {
+        top: 42%;
+        left: 34%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 43%;
+          left: 32%;
+        }
+      }
+
+      &.yekaterinburg {
+        top: 53%;
+        left: 28%;
+
+        @include breakpointsMaxW($bp-991) {
+          left: 25%;
+        }
+      }
+
+      &.chelyabinsk {
+        top: 56%;
+        left: 25%;
+      }
+
+      &.magnitogorsk {
+        top: 59%;
+        left: 24%;
+      }
+
+      &.ufa {
+        top: 51%;
+        left: 24%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 50%;
+        }
+      }
+
+      &.akhtubinsk {
+        top: 49%;
+        left: 13%;
+      }
+
+      &.krymsk {
+        top: 52%;
+        left: 4%;
+      }
+
+      &.taganrog {
+        top: 45%;
+        left: 5%;
+      }
+
+      &.voronezh {
+        top: 41%;
+        left: 10%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 43%;
+        }
+      }
+
+      &.engels {
+        top: 41%;
+        left: 15%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 43%;
+          left: 16%;
+        }
+      }
+
+      &.tambov {
+        top: 39%;
+        left: 13%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 40%;
+        }
+      }
+
+      &.ryazan {
+        top: 38%;
+        left: 17%;
+      }
+
+      &.lipetsk {
+        top: 36%;
+        left: 12%;
+
+        @include breakpointsMaxW($bp-991) {
+          left: 11%;
+        }
+      }
+
+      &.pokrov {
+        top: 35%;
+        left: 19%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 36%;
+        }
+      }
+
+      &.nizhny-novgorod {
+        top: 33%;
+        left: 14%;
+      }
+
+      &.fryazino {
+        top: 33%;
+        left: 14%;
+      }
+
+      &.tver {
+        top: 26%;
+        left: 17%;
+      }
+
+      &.yaroslavl {
+        top: 29%;
+        left: 18%;
+
+        @include breakpointsMaxW($bp-991) {
+          top: 28%;
+        }
+      }
+
+      &.moscow {
+        top: 31%;
+        left: 15%;
+      }
+
+      &.fryazino {
+        top: 31%;
+        left: 19%;
+      }
+
+      &.vyazma {
+        top: 26%;
+        left: 13%;
+      }
+
+      @keyframes pulse {
+        100% {
+          transform: translate(-50%, -50%) scale(5.5);
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+.map-box {
+  height: 490px;
+  width: 315px;
+  background-color: var(--color-white);
+  padding: 30px;
+  padding-top: 40px;
+  padding-right: 15px;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  color: #0f0f0f;
+  border: 2px solid #ccebff;
+  border-radius: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 500ms ease;
+  transform: scaleY(0);
+  transform-origin: bottom;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+    transition-delay: 300ms;
+
+    .map-box__list {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  @include breakpointsMaxW($bp-container) {
+    right: 15px;
+    left: initial;
+  }
+
+  @include breakpointsMaxW($bp-991) {
+    left: 15px;
+    width: calc(100% - 30px);
+    top: 30px;
+  }
+
+  @include breakpointsMaxW($bp-768) {
+    padding: 15px;
+    padding-top: 40px;
+  }
+
+  &__list {
+    overflow-y: auto;
+    height: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 500ms ease;
+  }
+
+  .simplebar-scrollbar {
+    &::before {
+      width: 100%;
+      background-color: #ccebff;
+      opacity: 1;
+    }
+  }
+
+  .simplebar-track {
+    background-color: #f2f5f7;
+    width: 6px;
+    opacity: 1;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 220px;
+
+    &:not(:last-child) {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  &__btn {
+    width: 147px;
+    height: 38px;
+    background-color: #f2f5f7;
+    border-radius: 19px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 600;
+    justify-content: space-between;
+    padding: 10px 20px;
+    transition: 200ms ease;
+
+    svg {
+      width: 12px;
+      height: 12px;
+      transition: 200ms ease;
+    }
+
+    &:hover {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+
+      svg {
+        path {
+          fill: #fff;
+          stroke: #fff;
+        }
+      }
+    }
+  }
+}

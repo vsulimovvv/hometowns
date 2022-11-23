@@ -1,0 +1,69 @@
+.musical-inspire {
+  @include adaptive-value("padding-top", 90, 50, 1);
+  @include adaptive-value("padding-bottom", 50, 30, 1);
+
+  &__title {
+    @include fz48();
+    margin-bottom: 30px;
+
+    @include breakpointsMaxW($bp-768) {
+      span {
+        display: block;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    gap: 30px;
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__left {
+    max-width: 700px;
+    padding-top: 40px;
+
+    @include breakpointsMaxW($bp-991) {
+      max-width: 100%;
+    }
+  }
+
+  &__img {
+    max-width: 530px;
+    width: 100%;
+    justify-self: end;
+    @include adaptive-value("height", 465, 250, 1);
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include breakpointsMaxW($bp-991) {
+        display: block;
+        margin-bottom: 30px;
+        max-width: initial;
+      }
+    }
+
+    img {
+      @include img(contain);
+
+      @include breakpointsMaxW($bp-991) {
+        width: initial;
+      }
+    }
+  }
+
+  &__text {
+    @include breakpointsMaxW($bp-768) {
+      font-size: 14px;
+    }
+  }
+}

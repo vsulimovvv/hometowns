@@ -1,0 +1,64 @@
+.projects-grant {
+  background-color: #f2f5f7;
+  @include adaptive-value("padding-top", 80, 50, 1);
+  @include adaptive-value("padding-bottom", 80, 50, 1);
+
+  &__title {
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: $DINProCond;
+    @include adaptive-value("font-size", 48, 26, 1);
+    @include adaptive-value("margin-right", 20, 15, 1);
+  }
+
+  .slider-actions {
+    .slider-actions__arrows {
+      @include breakpointsMaxW($bp-991) {
+        display: flex !important;
+
+        width: calc(66px + (112 - 66) * ((100vw - 320px) / (991 - 320)));
+        height: calc(34px + (56 - 34) * ((100vw - 320px) / (991 - 320)));
+
+        .swiper-button-prev,
+        .swiper-button-next {
+          &::after {
+            width: calc(16px + (24 - 16) * ((100vw - 320px) / (991 - 320)));
+            height: calc(16px + (24 - 16) * ((100vw - 320px) / (991 - 320)));
+          }
+        }
+      }
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptive-value("margin-bottom", 65, 40, 1);
+  }
+
+  &__slide {
+    box-sizing: border-box;
+    @include adaptive-value("max-width", 425, 330, 1);
+  }
+
+  &__slider {
+    @include adaptive-value("margin-bottom", 50, 25, 1);
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__btn {
+    text-transform: uppercase;
+    background-color: transparent;
+
+    @include breakpointsMaxW($bp-576) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

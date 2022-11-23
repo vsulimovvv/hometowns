@@ -1,0 +1,160 @@
+.hero {
+  overflow-x: hidden;
+  z-index: 1;
+
+  &__wrapper {
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 685px);
+    align-items: center;
+    gap: 55px;
+    min-height: 500px;
+    @include adaptive-value("gap", 55, 16, 1);
+
+    @include breakpointsMaxW($bp-container) {
+      grid-template-columns: auto auto;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      height: auto;
+      grid-template-columns: auto;
+    }
+  }
+
+  &__img {
+    position: relative;
+    @include adaptive-value("width", 400, 180, 1);
+    @include adaptive-value("height", 400, 180, 1);
+
+    img {
+      @include img(cover);
+      border-radius: 50%;
+    }
+  }
+
+  &__preview {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+
+    @include breakpointsMaxW($bp-container) {
+      width: calc(400px + (685 - 400) * ((100vw - 991px) / (1350 - 991)));
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      max-width: 685px;
+      width: calc(280px + (685 - 280) * ((100vw - 320px) / (1350 - 320)));
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      margin: 0 auto;
+    }
+
+    &::after {
+      @include elDef();
+      width: 435px;
+      height: 435px;
+      @include backgroundImage(url("../img/hero/decor.svg"), cover);
+      top: 0;
+      right: 0;
+      z-index: -1;
+      @include adaptive-value("width", 400, 180, 1);
+      @include adaptive-value("height", 400, 180, 1);
+    }
+  }
+
+  &__title {
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: $GPN_DINWebCondensedBold;
+    @include adaptive-value("font-size", 64, 32, 1);
+    @include adaptive-value("margin-bottom", 24, 8, 1);
+  }
+
+  &__text {
+    max-width: 535px;
+    margin-bottom: 30px;
+
+    @include breakpointsMaxW($bp-991) {
+      margin-bottom: 0;
+      max-width: 100%;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      font-size: 13px;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include breakpointsMaxW($bp-991) {
+        display: flex;
+      }
+
+      @include breakpointsMaxW($bp-576) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  &__btn {
+    padding: 16px 40px 16px 40px;
+    position: relative;
+    background-color: var(--color-light-gray);
+    border-radius: 50px;
+    font-weight: 500;
+
+    transition: 200ms ease;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    flex-basis: 300px;
+
+    @include breakpointsMaxW($bp-container) {
+      padding: 16px 24px 16px 24px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      justify-content: space-between;
+      padding: 16px 32px;
+      flex-basis: 0;
+    }
+
+    span {
+      margin-right: 16px;
+    }
+
+    svg {
+      transition: 200ms ease;
+    }
+
+    &:hover {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+
+      svg {
+        path {
+          fill: #fff;
+          stroke: #fff;
+        }
+      }
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+}

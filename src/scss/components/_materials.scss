@@ -1,0 +1,248 @@
+.materials {
+  @include adaptive-value("padding-top", 90, 50, 1);
+  @include adaptive-value("padding-bottom", 90, 50, 1);
+
+  &__title {
+    @include fz48();
+    @include adaptive-value("margin-bottom", 32, 24, 1);
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: 1fr 0.44fr;
+    @include adaptive-value("column-gap", 24, 16, 1);
+
+    @include breakpointsMaxW($bp-fullPage){
+      grid-template-columns: 1fr 0.45fr;
+    }
+
+    @include breakpointsMaxW($bp-container) {
+      grid-template-columns: 1fr 350px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr 310px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__btn {
+    grid-column: 2/3;
+    justify-self: flex-start;
+
+    @include breakpointsMaxW($bp-768) {
+      grid-column: initial;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 24px;
+    @include adaptive-value("column-gap", 24, 16, 1);
+    @include adaptive-value("margin-bottom", 40, 24, 1);
+
+    @include breakpointsMaxW($bp-container) {
+      grid-template-columns: 1fr 350px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr 310px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &:not(:last-child) {
+      &::after {
+        @include elDef();
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 48px);
+        height: 2px;
+        background-color: rgba(0, 64, 119, 0.2);
+
+        @include breakpointsMaxW($bp-768) {
+          width: 100%;
+        }
+      }
+    }
+
+    &--big {
+      grid-column: span 1;
+      grid-row: span 3;
+
+      &::after {
+        display: none;
+
+        @include breakpointsMaxW($bp-768) {
+          display: block;
+        }
+      }
+
+      .materials-card {
+        max-width: 100%;
+        padding: 0;
+        background-color: transparent;
+        height: 100%;
+
+        @include breakpointsMaxW($bp-768) {
+          padding: 0 0 24px 0;
+        }
+
+        &__tags {
+          max-width: calc(
+            400px + (500 - 400) * ((100vw - 768px) / (991 - 768))
+          );
+        }
+
+        &__title {
+          @include adaptive-value("font-size", 28, 16, 1);
+        }
+
+        &__bottom {
+          width: auto;
+          gap: 48px;
+        }
+
+        &__top {
+          width: 100%;
+          @include adaptive-value("height", 540, 180, 1);
+
+          img {
+            @include img(cover);
+            border-radius: 10px;
+
+            @include breakpointsMaxW($bp-768) {
+              border-radius: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.materials-card {
+  background-color: var(--color-light-gray);
+  min-height: 268px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  @include adaptive-value("padding", 24, 16, 1);
+  max-width: 550px;
+  width: 100%;
+
+  @include breakpointsMaxW($bp-fullPage) {
+    max-width: calc(400px + (550 - 400) * ((100vw - 1350px) / (1920 - 1350)));
+  }
+
+  @include breakpointsMaxW($bp-container) {
+    max-width: 100% !important;
+  }
+
+  @include breakpointsMaxW($bp-768) {
+    background-color: transparent;
+    min-height: auto;
+    padding: 24px 0;
+    width: 100%;
+  }
+
+  &__top {
+    @include adaptive-value("margin-bottom", 32, 24, 1);
+  }
+
+  &__tags {
+    margin-bottom: 16px;
+    max-width: 100%;
+  }
+
+  &__text {
+    margin-bottom: 8px;
+    width: 100%;
+  }
+
+  &__title {
+    @include adaptive-value("font-size", 18, 16, 1);
+    margin-bottom: 8px;
+
+    a {
+      color: inherit;
+      transition: 200ms ease;
+    }
+
+    &:hover {
+      color: var(--color-orange);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    width: 100%;
+  }
+
+  &__date {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 18px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  &__actions {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 18px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    color: var(--color-blue-dark);
+    display: grid;
+    grid-template-columns: 28px 28px;
+    gap: 16px;
+  }
+
+  &__like,
+  &__comment {
+    position: relative;
+    padding-left: 20px;
+
+    &::after {
+      @include elDef();
+      width: 16px;
+      height: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+    }
+  }
+
+  &__like {
+    &::after {
+      @include backgroundImage(url("../img/like.svg"), contain);
+    }
+  }
+
+  &__comment {
+    &::after {
+      @include backgroundImage(url("../img/comment.svg"), contain);
+    }
+  }
+}

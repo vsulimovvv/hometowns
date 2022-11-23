@@ -1,0 +1,9 @@
+<svg width="164" height="152" viewBox="0 0 164 152" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24.8655 78.2631L24.8655 2.33337L138.32 2.33337V80.4325" stroke="#E65907" stroke-width="4"/>
+<line y1="-2" x2="72.9509" y2="-2" transform="matrix(-0.777609 0.628748 -0.658311 -0.752746 158.948 60.5979)" stroke="#009AFF" stroke-width="4"/>
+<line y1="-2" x2="72.9509" y2="-2" transform="matrix(0.777609 0.628748 0.658311 -0.752746 5.52686 60.5979)" stroke="#009AFF" stroke-width="4"/>
+<path d="M22.2871 60.5979H2.94824L2.94824 152.333H161.527V60.5979H140.899" stroke="#009AFF" stroke-width="4"/>
+<path d="M5.52686 149.854L82.2376 91.5896L158.948 149.854" stroke="#4DD6CB" stroke-width="4"/>
+<line x1="46.783" y1="31.3252" x2="115.114" y2="31.3252" stroke="#E65907" stroke-width="4"/>
+<line x1="46.783" y1="51.1598" x2="88.0392" y2="51.1598" stroke="#009AFF" stroke-width="4"/>
+</svg>

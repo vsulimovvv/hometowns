@@ -1,0 +1,109 @@
+.museums-course {
+  @include adaptive-value("padding-top", 90, 50, 1);
+  @include adaptive-value("padding-bottom", 50, 40, 1);
+  background-color: #f1f5f7;
+
+  &__title {
+    @include fz48();
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    grid-template-rows: auto 1fr;
+    gap: 30px 40px;
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr;
+      grid-template-rows: initial;
+      gap: 25px;
+    }
+  }
+
+  &__btn {
+    padding: 28px 40px 28px 40px;
+    position: relative;
+    background-color: var(--color-white);
+    border-radius: 40px;
+    font-weight: 600;
+    width: 290px;
+    transition: 200ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+
+      svg {
+        path {
+          fill: #fff;
+          stroke: #fff;
+        }
+      }
+    }
+  }
+
+  &__text {
+    p {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      @include breakpointsMaxW($bp-991) {
+        &.hide {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__img {
+    grid-column: 2/3;
+    grid-row: 1/-1;
+    max-width: 505px;
+    justify-self: end;
+    height: 350px;
+    @include adaptive-value("height", 585, 175, 1);
+
+    @include breakpointsMaxW($bp-991) {
+      grid-column: initial;
+      grid-row: 2/3;
+      justify-self: start;
+      margin-top: 20px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      margin-top: 10px;
+    }
+
+    img {
+      @include img(cover);
+    }
+  }
+
+  &__more {
+    color: var(--color-blue-light);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    display: none;
+
+    @include breakpointsMaxW($bp-991) {
+      display: flex;
+      margin-top: -20px;
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+      margin-left: 5px;
+
+      path {
+        fill: var(--color-blue-light);
+      }
+    }
+  }
+}

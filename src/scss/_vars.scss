@@ -1,0 +1,26 @@
+// Color
+:root {
+  --color-black: #0f0f0f; // 15, 15, 15
+  --color-white: #fff;
+
+  --color-blue: #0070ba;
+  --color-blue-light: #009aff;
+  --color-blue-dark: #004077; // 0, 64, 119
+  --color-light-gray: #f2f5f7;
+  --color-orange: #e65907;
+  --color-green: #4dd6cb;
+
+  --color-text: rgba(15, 15, 15, 0.6);
+}
+
+// * breakpointsMaxW
+$bp-fullPage: 1950px;
+$bp-container: 1350px;
+$bp-991: 991.98px;
+$bp-768: 767.98px;
+$bp-576: 576px;
+$bp-360: 359.98px;
+
+// *=== Fonts
+$DINProCond: "DIN Pro Cond";
+$GPN_DINWebCondensedBold: "GPN_DINWebCondensedBold";

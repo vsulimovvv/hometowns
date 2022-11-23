@@ -1,0 +1,92 @@
+.faqs {
+  @include adaptive-value("padding-top", 90, 50, 1);
+  @include adaptive-value("padding-bottom", 90, 50, 1);
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    gap: 50px;
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  &__title {
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: $DINProCond;
+    margin-bottom: 100px;
+    @include adaptive-value("font-size", 48, 32, 1);
+
+    @include breakpointsMaxW($bp-991) {
+      margin-bottom: 40px;
+    }
+  }
+
+  .faqs-accordion {
+    line-height: 1.5;
+
+    &:not(:last-child) {
+      @include adaptive-value("margin-bottom", 25, 20, 1);
+    }
+
+    &__top {
+      height: 100%;
+      background-color: #f2f5f7;
+      border-radius: 15px;
+      @include adaptive-value("padding", 30, 15, 1);
+
+      &.accordion-control {
+        &::after {
+          @include adaptive-value("right", 30, 15, 1);
+        }
+      }
+    }
+
+    &__name {
+      display: block;
+      width: 85%;
+    }
+
+    &__text {
+      padding: 15px;
+
+      p {
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  &__preview {
+    position: relative;
+    z-index: 1;
+    @include adaptive-value("max-width", 620, 280, 1);
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+    }
+
+    &::after {
+      @include elDef();
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      @include backgroundImage(url("../img/hero/decor.svg"), cover);
+      @include adaptive-value("width", 385, 180, 1);
+      @include adaptive-value("height", 385, 180, 1);
+    }
+  }
+
+  &__circle {
+    @include adaptive-value("width", 385, 180, 1);
+    @include adaptive-value("height", 385, 180, 1);
+    border-radius: 50%;
+    background-color: var(--color-blue-light);
+  }
+}

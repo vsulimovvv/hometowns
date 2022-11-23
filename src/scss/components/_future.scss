@@ -1,0 +1,76 @@
+.future {
+  @include adaptive-value("padding-top", 90, 50, 1);
+  @include adaptive-value("padding-bottom", 80, 40, 1);
+  background-color: var(--color-light-gray);
+
+  @include breakpointsMaxW($bp-991) {
+    background-color: rgba(77, 214, 203, 0.2);
+    padding-top: 0;
+    margin-top: 50px;
+  }
+
+  &__wrapper {
+    position: relative;
+
+    @include breakpointsMaxW($bp-991) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__inner {
+    padding: 90px 110px 60px;
+    background-color: rgba(77, 214, 203, 0.2);
+    padding-left: 685px;
+    border-radius: 8px;
+
+    @include adaptive-value("padding-right", 110, 30, 1);
+    @include adaptive-value("padding-left", 685, 200, 1);
+    @include adaptive-value("padding-bottom", 60, 30, 1);
+    @include adaptive-value("padding-top", 90, 30, 1);
+
+    @include breakpointsMaxW($bp-991) {
+      background-color: transparent;
+      padding-left: 0;
+    }
+  }
+
+  &__preview {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 555px;
+    height: 555px;
+    @include adaptive-value("width", 555, 300, 1);
+
+    @include breakpointsMaxW($bp-991) {
+      position: static;
+      order: 1;
+      @include adaptive-value("height", 555, 300, 1);
+      margin-top: -28px;
+    }
+
+    img {
+      @include img(cover);
+      border-radius: 10px;
+    }
+  }
+
+  &__offer {
+    max-width: 545px;
+    @include breakpointsMaxW($bp-991) {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    @include fz48();
+    margin-bottom: 16px;
+    @include adaptive-value("margin-bottom", 16, 8, 1);
+  }
+
+  &__text {
+    @include adaptive-value("font-size", 16, 13, 1);
+    @include adaptive-value("margin-bottom", 30, 24, 1);
+  }
+}

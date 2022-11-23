@@ -1,0 +1,81 @@
+.socials {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      @include adaptive-value("margin-right", 24, 8, 1);
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 56px;
+    height: 56px;
+    background-color: var(--color-light-gray);
+    position: relative;
+    border-radius: 8px;
+    @include adaptive-value("width", 56, 32, 1);
+    @include adaptive-value("height", 56, 32, 1);
+
+    &::after {
+      @include elDef();
+      width: 24px;
+      height: 24px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--color-blue-dark);
+      transition: 200ms ease;
+      @include adaptive-value("width", 24, 12, 1);
+      @include adaptive-value("height", 24, 12, 1);
+    }
+
+    &:hover {
+      &::after {
+        background-color: var(--color-orange);
+      }
+    }
+
+    &--vk {
+      &::after {
+        @include maskImage(url("../img/socials/vk.svg"), contain);
+      }
+    }
+
+    &--ok {
+      &::after {
+        @include maskImage(url("../img/socials/ok.svg"), contain);
+      }
+    }
+
+    &--telegram {
+      &::after {
+        @include maskImage(url("../img/socials/telegram.svg"), contain);
+      }
+    }
+
+    &--rutube {
+      &::after {
+        @include maskImage(url("../img/socials/rutube.svg"), contain);
+      }
+    }
+  }
+
+  &--white {
+    .socials {
+      &__link {
+        background-color: var(--color-white);
+        @include adaptive-value("width", 56, 48, 1);
+        @include adaptive-value("height", 56, 48, 1);
+
+        &::after {
+          @include adaptive-value("width", 24, 24, 1);
+          @include adaptive-value("height", 24, 24, 1);
+        }
+      }
+    }
+  }
+}

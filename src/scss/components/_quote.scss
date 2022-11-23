@@ -1,0 +1,45 @@
+.quote {
+  @include adaptive-value("padding", 48, 16, 1);
+  background: rgba(77, 214, 203, 0.2);
+  border-radius: 8px;
+  @include adaptive-value("margin-bottom", 40, 24, 1);
+
+  &__text {
+    display: block;
+    @include adaptive-value("margin-bottom", 24, 16, 1);
+
+    &--italic {
+      font-style: italic;
+    }
+  }
+
+  .author {
+    display: flex;
+    align-items: center;
+
+    &__img {
+      min-width: 48px;
+      max-width: 48px;
+      height: 48px;
+      margin-right: 16px;
+      margin-bottom: 0;
+      flex-shrink: 0;
+      @include adaptive-value("margin-right", 16, 12, 1);
+    }
+
+    &__title {
+      @include adaptive-value("font-size", 18, 14, 1);
+      @include adaptive-value("margin-bottom", 4, 2, 1);
+    }
+
+    &__prof {
+      @include adaptive-value("font-size", 16, 13, 1);
+    }
+  }
+
+  &--presscenter {
+    background-color: var(--color-white);
+
+
+  }
+}
