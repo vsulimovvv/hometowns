@@ -55,7 +55,8 @@
       grid-column: initial;
       grid-row: 2/3;
       justify-self: start;
-      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-top: 10px;
     }
 
     @include breakpointsMaxW($bp-768) {
@@ -144,7 +145,7 @@
 
   &--museums {
     background-color: #f2f7f7;
-    
+
     .section-descr {
       &__img {
         grid-column: 2/3;

@@ -6,14 +6,16 @@
 
   &::after {
     @include elDef();
-    right: -70px;
+    right: 0;
+    transform: translateX(50%);
     @include backgroundImage(url("../img/media-decor.png"), contain);
     @include adaptive-value("width", 193, 70, 1);
     @include adaptive-value("height", 193, 70, 1);
     @include adaptive-value("top", 55, 20, 1);
 
     @include breakpointsMaxW($bp-768) {
-      right: -35px;
+      width: 70px;
+      height: 70px;
     }
   }
 
