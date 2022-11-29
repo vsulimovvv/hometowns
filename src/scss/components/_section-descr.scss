@@ -24,10 +24,15 @@
       display: block;
       margin-bottom: 30px;
     }
+
     p {
       &:not(:last-child) {
         margin-bottom: 20px;
       }
+    }
+
+    b {
+      font-weight: 600;
     }
 
     &--narval {
@@ -134,6 +139,12 @@
 
     @include breakpointsMaxW($bp-991) {
       @include adaptive-value("padding-bottom", 110, 50, 1);
+    }
+  }
+
+  &--masters {
+    .section-descr__wrapper {
+      padding-right: 15px;
     }
   }
 
@@ -258,13 +269,14 @@
     }
   }
   &--talents-reverse {
-    @include adaptive-value("padding-top", 50, 40, 1);
-    @include adaptive-value("padding-bottom", 50, 40, 1);
+    @include adaptive-value("padding-top", 100, 50, 1);
+    @include adaptive-value("padding-bottom", 100, 50, 1);
 
     .section-descr {
       &__img {
         grid-column: 1/2;
         justify-self: start;
+        @include adaptive-value("height", 350, 210, 1);
 
         @include breakpointsMaxW($bp-991) {
           grid-column: initial;
