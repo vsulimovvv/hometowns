@@ -70,4 +70,54 @@
       @include adaptive-value("font-size", 18, 14, 1);
     }
   }
+
+  &--masters {
+    @include adaptive-value("padding-top", 90, 40, 1);
+    @include adaptive-value("padding-bottom", 90, 40, 1);
+
+    .directions-item {
+      color: #0f0f0f;
+      padding-top: 50px;
+      padding-left: 15px;
+      padding-right: 15px;
+      height: 100%;
+
+      @include breakpointsMaxW($bp-768) {
+        display: grid;
+        grid-template-columns: 55px auto;
+        gap: 10px;
+      }
+
+      &__img {
+        width: 95px;
+        height: 95px;
+        margin-bottom: 40px;
+
+        @include breakpointsMaxW($bp-768) {
+          width: 55px;
+          height: 55px;
+          margin-bottom: 0;
+        }
+      }
+
+      &__text {
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+
+        @include breakpointsMaxW($bp-768) {
+          margin-bottom: 0;
+        }
+      }
+
+      &__descr {
+        font-size: 15px;
+
+        @include breakpointsMaxW($bp-768) {
+          grid-column: 1/-1;
+        }
+      }
+    }
+  }
 }

@@ -171,11 +171,26 @@
     }
   }
 
+  &--masters,
   &--talents {
     .adv-storm__list {
       @include breakpointsMaxW($bp-576) {
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: auto auto auto;
+        gap: 5px;
+      }
+    }
+
+    .adv-storm__item {
+      @include breakpointsMaxW($bp-576) {
+        padding-top: 20px;
+        padding-left: 20px;
+      }
+
+      .adv-storm__small {
+        @include breakpointsMaxW($bp-576) {
+          font-size: 11px;
+        }
       }
     }
   }

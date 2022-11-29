@@ -22,3 +22,4 @@ Kustendorf: https://vsulimovvv.github.io/hometowns/app/kustendorf.html
 Родные музеи: https://vsulimovvv.github.io/hometowns/app/museums.html  
 Дух огня: https://vsulimovvv.github.io/hometowns/app/fire.html  
 Умножая таланты: https://vsulimovvv.github.io/hometowns/app/talents.html  
+Мастера: https://vsulimovvv.github.io/hometowns/app/masters.html  

@@ -190,6 +190,7 @@ function quoteSlider() {
     const swiper = new Swiper(slider, {
       slidesPerView: "auto",
       spaceBetween: 20,
+      autoHeight: true,
       breakpoints: {
         319: {
           spaceBetween: 15,

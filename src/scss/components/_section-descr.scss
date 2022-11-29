@@ -88,10 +88,12 @@
     }
   }
 
-  &--hometowns-bg {
+  &--hometowns-bg,
+  &--masters-bg {
     background-color: #f2f5f7;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 
     @include adaptive-value("padding-bottom", 115, 50, 1);
 
@@ -102,6 +104,7 @@
       @include backgroundImage(url("../img/media-decor-blue.png"), contain);
       width: 275px;
       height: 275px;
+      z-index: -1;
 
       @include breakpointsMaxW($bp-991) {
         display: none;
@@ -122,6 +125,15 @@
       &__img {
         max-width: 560px;
       }
+    }
+  }
+
+  &--masters-bg {
+    @include adaptive-value("padding-top", 110, 50, 1);
+    padding-bottom: 115px;
+
+    @include breakpointsMaxW($bp-991) {
+      @include adaptive-value("padding-bottom", 110, 50, 1);
     }
   }
 
