@@ -52,6 +52,35 @@
     }
   }
 
+  &__link {
+    color: var(--color-blue-light);
+    font-weight: 700;
+    position: relative;
+    transition: 250ms ease;
+
+    &:hover {
+      span {
+        border-bottom-color: var(--color-blue-light);
+      }
+    }
+
+    span {
+      border-bottom: 1px solid transparent;
+    }
+
+    svg {
+      position: absolute;
+      top: 3px;
+      right: -15px;
+      width: 10px;
+      height: 10px;
+
+      path {
+        fill: var(--color-blue-light);
+      }
+    }
+  }
+
   &__list {
     display: flex;
     justify-content: space-between;
@@ -139,6 +168,15 @@
 
     .adv-storm__number {
       margin-bottom: 10px;
+    }
+  }
+
+  &--talents {
+    .adv-storm__list {
+      @include breakpointsMaxW($bp-576) {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+      }
     }
   }
 }

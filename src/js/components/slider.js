@@ -138,6 +138,78 @@ function topicsSlider() {
   });
 }
 
+function partnersSlider() {
+  const partnersSliders = document.querySelectorAll(".partners__slider");
+
+  partnersSliders.forEach((slider) => {
+    const swiper = new Swiper(slider, {
+      slidesPerView: "auto",
+      speed: 2000,
+      loop: true,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      observer: true,
+      observeParents: true,
+      breakpoints: {
+        319: {
+          spaceBetween: 40,
+        },
+        768: {
+          spaceBetween: 70,
+        },
+      },
+    });
+  });
+}
+
+function howAcceptSlider() {
+  const topicsSliders = document.querySelectorAll(".how-accept__slider");
+
+  topicsSliders.forEach((slider) => {
+    const swiper = new Swiper(slider, {
+      slidesPerView: "auto",
+      spaceBetween: 20,
+      breakpoints: {
+        319: {
+          spaceBetween: 15,
+        },
+        991: {
+          spaceBetween: 20,
+        },
+      },
+    });
+  });
+}
+
+function quoteSlider() {
+  const topicsSliders = document.querySelectorAll(".quote-slider__slider");
+
+  topicsSliders.forEach((slider) => {
+    const swiper = new Swiper(slider, {
+      slidesPerView: "auto",
+      spaceBetween: 20,
+      breakpoints: {
+        319: {
+          spaceBetween: 15,
+        },
+        991: {
+          spaceBetween: 20,
+        },
+      },
+      navigation: {
+        nextEl: document.querySelector(
+          ".quote-slider__content .swiper-button-next"
+        ),
+        prevEl: document.querySelector(
+          ".quote-slider__content .swiper-button-prev"
+        ),
+      },
+    });
+  });
+}
+
 export {
   postsSlider,
   tagsInner,
@@ -147,4 +219,7 @@ export {
   projectsGrantSlider,
   mediaSlider,
   topicsSlider,
+  partnersSlider,
+  howAcceptSlider,
+  quoteSlider,
 };

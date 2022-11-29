@@ -6,8 +6,7 @@ export default function accordion() {
   accordions.forEach((accordion) => {
     accordion.addEventListener("click", () => {
       let content = accordion.previousElementSibling;
-      accordion.classList.toggle('active');
-
+      accordion.classList.toggle("active");
 
       if (content.style.maxHeight) {
         content.style.maxHeight = null;

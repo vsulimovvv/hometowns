@@ -13,6 +13,9 @@ import {
   projectsGrantSlider,
   mediaSlider,
   topicsSlider,
+  partnersSlider,
+  howAcceptSlider,
+  quoteSlider,
 } from "./components/slider";
 import sentForm from "./components/sentForm";
 import fixedHeader from "./components/fixedHeader";
@@ -21,6 +24,7 @@ import someTabs from "./components/tabs";
 import modals from "./components/modals";
 import showFilters from "./components/showFilters";
 import accordion from "./components/accordion";
+import toggleAccordion from "./components/toggleAccordion";
 
 import showProgramPopup from "./components/showProgramPopup";
 
@@ -54,12 +58,16 @@ modals();
 showFilters();
 tickerSlider();
 projectsGrantSlider();
-accordion();
-
+quoteSlider();
+// accordion();
 someTabs(".tabs", ".tabs-btn", ".tabs-content", "active");
+someTabs(".faq-tabs", ".faq-tabs__btn", ".faq-tabs__content", "active");
 showProgramPopup();
 mediaSlider();
 topicsSlider();
+partnersSlider();
+howAcceptSlider();
+toggleAccordion(".accordion-control", ".accordion-content", ".accordion");
 
 function showMore() {
   const showMoreBtn = document.querySelector(".museums-course__more");

@@ -245,4 +245,45 @@
       }
     }
   }
+  &--talents-reverse {
+    @include adaptive-value("padding-top", 50, 40, 1);
+    @include adaptive-value("padding-bottom", 50, 40, 1);
+
+    .section-descr {
+      &__img {
+        grid-column: 1/2;
+        justify-self: start;
+
+        @include breakpointsMaxW($bp-991) {
+          grid-column: initial;
+          grid-row: 2/3;
+          justify-self: start;
+          margin-top: 20px;
+        }
+
+        @include breakpointsMaxW($bp-768) {
+          margin-top: 10px;
+        }
+      }
+
+      &__wrapper {
+        grid-template-columns: 0.8fr 1fr;
+        gap: 30px 100px;
+
+        .section-descr__text {
+          max-width: 570px;
+
+          @include breakpointsMaxW($bp-991) {
+            max-width: 100%;
+          }
+        }
+
+        @include breakpointsMaxW($bp-991) {
+          grid-template-columns: 1fr;
+          grid-template-rows: initial;
+          gap: 30px;
+        }
+      }
+    }
+  }
 }

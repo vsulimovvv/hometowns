@@ -131,4 +131,32 @@
       bottom: 0;
     }
   }
+
+  &.hero {
+    &--talents {
+      &::before {
+        bottom: initial;
+        top: 30px;
+      }
+
+      &::after {
+        bottom: 0;
+        z-index: -1;
+      }
+
+      .hero__btns {
+        &--col-2 {
+          .hero__btn {
+            max-width: 280px;
+            padding: 16px 35px 16px 35px;
+
+            &:nth-child(2) {
+              max-width: 220px;
+              justify-content: space-between;
+            }
+          }
+        }
+      }
+    }
+  }
 }
