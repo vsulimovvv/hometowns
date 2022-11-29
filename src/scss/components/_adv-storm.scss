@@ -173,6 +173,9 @@
 
   &--masters,
   &--talents {
+    .adv-storm__video {
+      margin-top: 28px;
+    }
     .adv-storm__list {
       @include breakpointsMaxW($bp-576) {
         display: grid;
@@ -192,12 +195,6 @@
           font-size: 11px;
         }
       }
-    }
-  }
-
-  &--talents {
-    .adv-storm__video {
-      margin-top: 28px;
     }
   }
 }

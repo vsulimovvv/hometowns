@@ -16,9 +16,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 90px 50px;
+    padding-right: 15px;
 
     @include breakpointsMaxW($bp-768) {
       gap: 50px;
+      padding-right: 5px;
     }
 
     @include breakpointsMaxW($bp-576) {
@@ -27,6 +29,13 @@
   }
 
   &--masters {
+    .events-card {
+      &__top {
+        img {
+          // @include adaptive-value("height", 350, 170, 1);
+        }
+      }
+    }
   }
 }
 
@@ -60,6 +69,7 @@
 
     img {
       @include img(cover);
+      @include adaptive-value("height", 350, 160, 1);
     }
   }
 
