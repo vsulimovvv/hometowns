@@ -33,7 +33,6 @@
 
     //
     overflow: hidden;
-    padding: 2px;
   }
 
   &__input {
@@ -44,7 +43,7 @@
     border-radius: 15px;
     border: 2px solid transparent;
     overflow: hidden;
-    
+
     @include breakpointsMaxW($bp-768) {
       padding: 15px 20px;
       margin-top: auto;
@@ -52,6 +51,7 @@
 
     &:focus {
       border-color: #ccebff;
+      outline: none;
     }
 
     &:valid ~ .form-musical__label,
