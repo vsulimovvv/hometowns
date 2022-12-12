@@ -30,6 +30,10 @@
     width: 100%;
     display: flex;
     align-items: center;
+
+    //
+    overflow: hidden;
+    padding: 2px;
   }
 
   &__input {
@@ -45,14 +49,14 @@
     }
 
     &:focus {
-      outline: 2px solid #ccebff;
+      border: 2px solid #ccebff;
     }
 
     &:valid ~ .form-musical__label,
     &:focus ~ .form-musical__label {
       transform: translateY(-22px);
       font-size: 13px;
-      
+
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
