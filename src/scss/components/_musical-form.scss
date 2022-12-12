@@ -42,14 +42,16 @@
     font-size: 16px;
     height: 100%;
     border-radius: 15px;
-
+    border: 2px solid transparent;
+    overflow: hidden;
+    
     @include breakpointsMaxW($bp-768) {
       padding: 15px 20px;
       margin-top: auto;
     }
 
     &:focus {
-      border: 2px solid #ccebff;
+      border-color: #ccebff;
     }
 
     &:valid ~ .form-musical__label,
